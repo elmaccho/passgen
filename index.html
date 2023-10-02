@@ -3,10 +3,37 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Password generator</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+    <h1 class="title">Password Generator</h1>
+
+    <form class="passgen__wrapper">
+
+        <input class="output__input" type="text" name="" id="">
+
+        <div class="customize__wrapper">
+            <div class="title__wrapper">
+                <h2>Customize your password</h2>
+                <hr>
+            </div>
+            <div class="sett__wrapper">
+                <div class="passlength__wrapper">
+                    <h3>Password Length</h3>
+                    <span><input type="number" name="" id=""> <input type="range" name="" id=""></span>
+                </div>
+                <div class="passet__wrapper">
+                    <label for="uppercase"><input type="checkbox" name="" id="uppercase"> Uppercase</label>
+                    <label for="lowercase"><input type="checkbox" name="" id="lowercase"> Lowercase</label>
+                    <label for="numbers"><input type="checkbox" name="" id="numbers"> Numbers</label>
+                    <label for="symbols"><input type="checkbox" name="" id="symbols"> Symbols</label>
+                </div>
+            </div>
+        </div>
+    </form>
+
+
     
     <script src="/script.js"></script>
 </body>

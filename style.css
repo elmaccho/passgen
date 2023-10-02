@@ -1,3 +1,36 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
 body{
     background-color: #232323;
+    font-family: 'Poppins', sans-serif;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.title{
+    color: white;
+    font-size: 48px;
+}
+
+.output__input{
+    width: 100%;
+    outline: none;
+    height: 35px;
+    border-radius: 12px;
+    border: 1px solid #232323;
+    text-indent: 12px;
+}
+
+.passgen__wrapper{
+    background-color: white;
+    -webkit-box-shadow: inset 0px 0px 24px 0px rgba(66, 68, 90, 1);
+    -moz-box-shadow: inset 0px 0px 24px 0px rgba(66, 68, 90, 1);
+    box-shadow: inset 0px 0px 24px 0px rgba(66, 68, 90, 1);
+    border-radius: 23px;
+
+    padding: 35px;
+    box-sizing: border-box;
 }
