@@ -11,23 +11,23 @@
 
     <form class="passgen__wrapper">
 
-        <input class="output__input" type="text" name="" id="">
+        <input class="output__input" type="text" name="" id="" min="1" max="64">
 
         <div class="customize__wrapper">
             <div class="title__wrapper">
                 <h2>Customize your password</h2>
-                <hr>
+
             </div>
             <div class="sett__wrapper">
                 <div class="passlength__wrapper">
                     <h3>Password Length</h3>
-                    <span><input type="number" name="" id=""> <input type="range" name="" id=""></span>
+                    <span class="passlength__wrapper-span"><input class="passlength__input-number" type="number" name="" id="" value="24" max="64" min="1"><input class="passlength__input-range" type="range" name="" id="" value="24" max="64" min="1"></span>
                 </div>
                 <div class="passet__wrapper">
-                    <label for="uppercase"><input type="checkbox" name="" id="uppercase"> Uppercase</label>
-                    <label for="lowercase"><input type="checkbox" name="" id="lowercase"> Lowercase</label>
-                    <label for="numbers"><input type="checkbox" name="" id="numbers"> Numbers</label>
-                    <label for="symbols"><input type="checkbox" name="" id="symbols"> Symbols</label>
+                    <label for="uppercase"><input class="passet__input-checkbox uppercaseCheckbox" type="checkbox" name="" id="uppercase"> Uppercase</label>
+                    <label for="lowercase"><input class="passet__input-checkbox lowercaseCheckbox" type="checkbox" name="" id="lowercase"> Lowercase</label>
+                    <label for="numbers"><input class="passet__input-checkbox numbersCheckbox" type="checkbox" name="" id="numbers"> Numbers</label>
+                    <label for="symbols"><input class="passet__input-checkbox symbolsCheckbox" type="checkbox" name="" id="symbols"> Symbols</label>
                 </div>
             </div>
         </div>
