@@ -18,13 +18,36 @@ const changeValueNumber = () => {
 }
 
 const randomPassword = () => {
-    const lowercase = "abcdefghijklmnopqrstuvwxyz"
-    const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ"
+  const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+  const lowercase = "abcdefghijklmnopqrstuvwxyz";
+  const numbers = "0123456789";
+  const symbols = ['[', ']', '\\', '@', '!', '%', '&', '#', '^', '*'];
 
-    let output = ''
+  // Tworzenie zbioru znaków na podstawie wybranych opcji
+  let charset = '';
+  if (useUppercase) charset += uppercase;
+  if (useLowercase) charset += lowercase;
+  if (useNumbers) charset += numbers;
+  if (useSymbols) charset += symbols.join('');
 
-    outputInput.value = output
-}
+//   if (charset === '') {
+//     console.error('Musisz wybrać przynajmniej jedną opcję.');
+//     return '';
+//   }
+
+  // Generowanie hasła
+  let password = '';
+  for (let i = 0; i < length; i++) {
+    const randomIndex = Math.floor(Math.random() * charset.length);
+    password += charset[randomIndex];
+  }
+
+  return password;
+};
+
+// Przykład użycia:
+console.log();
+
 
 
 let atLeastOneChecked = false;
