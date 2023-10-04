@@ -5,6 +5,8 @@ const outputInput = document.querySelector('.output__input');
 const passetInputCheckboxes = document.querySelectorAll('.passet__input-checkbox');
 
 const regenerateBtnIcon = document.querySelector('.regenerateBtn__icon')
+const copyBtnIcon = document.querySelector('.copyBtn__icon')
+const copyBtn = document.querySelector('.copyBtn')
 
 const changeValueRange = () => {
     passlengthInputNumber.value = passlengthInputRange.value;
@@ -37,7 +39,14 @@ const randomPassword = () => {
     }
 
     outputInput.value = password;
-};
+}
+
+const copyClipboard = () => {
+    outputInput.select()
+    outputInput.setSelectionRange(0, 9999)
+
+    navigator.clipboard.writeText(outputInput.value)
+}
 
 let atLeastOneChecked = false;
 
@@ -64,3 +73,5 @@ passlengthInputRange.addEventListener('input', changeValueRange);
 passlengthInputNumber.addEventListener('input', changeValueNumber);
 
 regenerateBtnIcon.addEventListener('click', randomPassword)
+copyBtnIcon.addEventListener('click', copyClipboard)
+copyBtn.addEventListener('click', copyClipboard)
