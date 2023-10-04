@@ -1,54 +1,43 @@
-const passlengthInputNumber = document.querySelector('.passlength__input-number')
-const passlengthInputRange = document.querySelector('.passlength__input-range')
-const outputInput = document.querySelector('.output__input')
+const passlengthInputNumber = document.querySelector('.passlength__input-number');
+const passlengthInputRange = document.querySelector('.passlength__input-range');
+const outputInput = document.querySelector('.output__input');
 
-const lowercaseCheckbox = document.querySelector('.lowercaseCheckbox')
-const uppercaseCheckbox = document.querySelector('.uppercaseCheckbox')
-const numbersCheckbox = document.querySelector('.numbersCheckbox')
-const symbolsCheckbox = document.querySelector('.symbolsCheckbox')
+const passetInputCheckboxes = document.querySelectorAll('.passet__input-checkbox');
 
-const passetInputCheckboxes = document.querySelectorAll('.passet__input-checkbox')
+const regenerateBtnIcon = document.querySelector('.regenerateBtn__icon')
 
 const changeValueRange = () => {
-    passlengthInputNumber.value = passlengthInputRange.value
+    passlengthInputNumber.value = passlengthInputRange.value;
+    randomPassword();
 }
 
 const changeValueNumber = () => {
-    passlengthInputRange.value = passlengthInputNumber.value
+    passlengthInputRange.value = passlengthInputNumber.value;
+    randomPassword();
 }
 
 const randomPassword = () => {
-  const uppercase = "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
-  const lowercase = "abcdefghijklmnopqrstuvwxyz";
-  const numbers = "0123456789";
-  const symbols = ['[', ']', '\\', '@', '!', '%', '&', '#', '^', '*'];
 
-  // Tworzenie zbioru znaków na podstawie wybranych opcji
-  let charset = '';
-  if (useUppercase) charset += uppercase;
-  if (useLowercase) charset += lowercase;
-  if (useNumbers) charset += numbers;
-  if (useSymbols) charset += symbols.join('');
+    const lowercaseCheckbox = document.querySelector('.lowercaseCheckbox').checked;
+    const uppercaseCheckbox = document.querySelector('.uppercaseCheckbox').checked;
+    const numbersCheckbox = document.querySelector('.numbersCheckbox').checked;
+    const symbolsCheckbox = document.querySelector('.symbolsCheckbox').checked;
 
-//   if (charset === '') {
-//     console.error('Musisz wybrać przynajmniej jedną opcję.');
-//     return '';
-//   }
+    let charset = '';
+    if (lowercaseCheckbox) charset += "abcdefghijklmnopqrstuvwxyz";
+    if (uppercaseCheckbox) charset += "ABCDEFGHIJKLMNOPQRSTUVWXYZ";
+    if (numbersCheckbox) charset += "0123456789";
+    if (symbolsCheckbox) charset += "!@#$%^&*()_+{}[]|:;<>,.?/~`-=";
+  
+    let password = '';
 
-  // Generowanie hasła
-  let password = '';
-  for (let i = 0; i < length; i++) {
-    const randomIndex = Math.floor(Math.random() * charset.length);
-    password += charset[randomIndex];
-  }
+    for (let i = 0; i < passlengthInputRange.value; i++){
+        const randomIndex = Math.floor(Math.random() * charset.length);
+        password += charset[randomIndex];
+    }
 
-  return password;
+    outputInput.value = password;
 };
-
-// Przykład użycia:
-console.log();
-
-
 
 let atLeastOneChecked = false;
 
@@ -62,6 +51,7 @@ passetInputCheckboxes.forEach(checkbox => {
         checkbox.checked = true;
       }
     }
+    randomPassword();
   });
 });
 
@@ -70,8 +60,7 @@ if (!atLeastOneChecked) {
 }
 
 
-passlengthInputRange.addEventListener('input', changeValueRange)
-passlengthInputRange.addEventListener('input', randomPassword)
+passlengthInputRange.addEventListener('input', changeValueRange);
+passlengthInputNumber.addEventListener('input', changeValueNumber);
 
-passlengthInputNumber.addEventListener('input', changeValueNumber)
-passlengthInputNumber.addEventListener('input', randomPassword)
+regenerateBtnIcon.addEventListener('click', randomPassword)

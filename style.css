@@ -15,6 +15,25 @@ body{
     font-size: 48px;
 }
 
+.output__input-wrapper{
+    display: flex;
+    position: relative;
+    justify-content: right;
+    align-items: center;
+}
+.copyBtn__icon, .regenerateBtn__icon{
+    position: absolute;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+    background-color: transparent;
+    border: none;
+    color: #232323;
+}
+.copyBtn__icon{
+    right: 45px;
+}
+
 .output__input{
     width: 100%;
     outline: none;
@@ -117,4 +136,21 @@ body{
     height: 20px;
     width: 20px;
     cursor: pointer;
+}
+
+.copyBtn{
+    padding: 15px 30px;
+    border-radius: 23px;
+    font-size: 20px;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    background-color: #e8783e;
+    color: white;
+    font-weight: 600;
+    transition: 0.3s;
+    margin-top: 45px;
+}
+.copyBtn:hover{
+    opacity: 75%;
 }

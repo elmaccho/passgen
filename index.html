@@ -5,13 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Password generator</title>
     <link rel="stylesheet" href="style.css">
+
+    <script src="https://kit.fontawesome.com/4798a03daf.js" crossorigin="anonymous"></script>
 </head>
 <body>
     <h1 class="title">Password Generator</h1>
 
     <form class="passgen__wrapper">
 
-        <input class="output__input" type="text" name="" id="" min="1" max="64">
+        <span class="output__input-wrapper">
+            <input class="output__input" type="text" name="" id="" min="1" max="45">
+
+            <button type="button" class="copyBtn__icon"><i class="fa-regular fa-copy"></i></button>
+            <button type="button" class="regenerateBtn__icon"><i class="fa-solid fa-arrows-rotate"></i></button>
+        </span>
 
         <div class="customize__wrapper">
             <div class="title__wrapper">
@@ -21,7 +28,7 @@
             <div class="sett__wrapper">
                 <div class="passlength__wrapper">
                     <h3>Password Length</h3>
-                    <span class="passlength__wrapper-span"><input class="passlength__input-number" type="number" name="" id="" value="24" max="64" min="1"><input class="passlength__input-range" type="range" name="" id="" value="24" max="64" min="1"></span>
+                    <span class="passlength__wrapper-span"><input class="passlength__input-number" type="number" name="" id="" value="24" max="45" min="1"><input class="passlength__input-range" type="range" name="" id="" value="24" max="45" min="1"></span>
                 </div>
                 <div class="passet__wrapper">
                     <label for="uppercase"><input class="passet__input-checkbox uppercaseCheckbox" type="checkbox" name="" id="uppercase"> Uppercase</label>
@@ -31,8 +38,9 @@
                 </div>
             </div>
         </div>
-    </form>
 
+    </form>
+    <button class="copyBtn">Copy Password</button>
 
     
     <script src="/script.js"></script>
