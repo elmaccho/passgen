@@ -55,6 +55,7 @@ body{
 
     padding: 35px;
     box-sizing: border-box;
+    position: relative;
 }
 
 .title__wrapper h2{
@@ -157,11 +158,46 @@ body{
     opacity: 75%;
 }
 
+.copied1__wrapper{
+    position: absolute;
+    background-color: #bcbcbc;
+    color: white;
+    padding: 5px 10px;
+    border-radius: 12px;
+    top: 15px;
+    right: 50px;
+    z-index: 1;
+    transition: 0.3s;
+
+    transform: scale(0);
+    transform-origin: center bottom;
+}
+
+footer{
+    position: absolute;
+    width: 100%;
+    background-color: #1e1e25;
+    bottom: 0;
+
+    display: flex;
+    justify-content: center;
+    padding: 5px 0;
+}
+footer a{
+    color: white;
+    text-decoration: none;
+}
+
 @media screen and (max-width: 600px) {
     .passgen__wrapper{
         width: 90%;
     }
     .passet__wrapper{
         flex-direction: column;
+    }
+
+    footer{
+        position: unset;
+        margin-top: 50px;
     }
 }

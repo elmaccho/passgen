@@ -8,6 +8,8 @@ const regenerateBtnIcon = document.querySelector('.regenerateBtn__icon')
 const copyBtnIcon = document.querySelector('.copyBtn__icon')
 const copyBtn = document.querySelector('.copyBtn')
 
+const copied1Wrapper = document.querySelector('.copied1__wrapper')
+
 const changeValueRange = () => {
     passlengthInputNumber.value = passlengthInputRange.value;
     randomPassword();
@@ -47,6 +49,13 @@ const copyClipboard = () => {
 
     navigator.clipboard.writeText(outputInput.value)
 }
+const copyBynIconAnimation = () => {
+    copied1Wrapper.style.transform = "scale(1)"
+
+    setTimeout(() => {
+        copied1Wrapper.style.transform = "scale(0)"  
+    }, 1000);
+}
 
 let atLeastOneChecked = false;
 
@@ -74,4 +83,5 @@ passlengthInputNumber.addEventListener('input', changeValueNumber);
 
 regenerateBtnIcon.addEventListener('click', randomPassword)
 copyBtnIcon.addEventListener('click', copyClipboard)
+copyBtnIcon.addEventListener('click', copyBynIconAnimation)
 copyBtn.addEventListener('click', copyClipboard)
